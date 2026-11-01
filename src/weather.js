@@ -51,8 +51,17 @@ export function formatDayLabel(date, index = 0) {
 export function formatDateTime(iso, timezone) {
   if (!iso) return ''
   try {
-    return new Intl.DateTimeFormat('en', { weekday: 'long', hour: 'numeric', minute: '2-digit', timeZone: timezone }).format(new Date(iso))
+    return new Intl.DateTimeFormat('en', {
+      weekday: 'long',
+      hour: 'numeric',
+      minute: '2-digit',
+      timeZone: timezone,
+    }).format(new Date(iso))
   } catch {
-    return new Intl.DateTimeFormat('en', { weekday: 'long', hour: 'numeric', minute: '2-digit' }).format(new Date(iso))
+    return new Intl.DateTimeFormat('en', {
+      weekday: 'long',
+      hour: 'numeric',
+      minute: '2-digit',
+    }).format(new Date(iso))
   }
 }

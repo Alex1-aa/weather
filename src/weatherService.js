@@ -7,7 +7,9 @@ const inFlight = new Map()
 async function fetchJson(url) {
   const response = await fetch(url)
   if (response.status === 429) {
-    const error = new Error('The weather provider is rate-limiting requests. Please wait a moment and try again.')
+    const error = new Error(
+      'The weather provider is rate-limiting requests. Please wait a moment and try again.',
+    )
     error.kind = 'rate-limit'
     throw error
   }
@@ -28,7 +30,12 @@ export async function searchLocations(query) {
   if (cached && Date.now() - cached.timestamp < GEOCODE_TTL) return cached.value
 
   const url = new URL('https://geocoding-api.open-meteo.com/v1/search')
-  url.search = new URLSearchParams({ name: query.trim(), count: '5', language: 'en', format: 'json' })
+  url.search = new URLSearchParams({
+    name: query.trim(),
+    count: '5',
+    language: 'en',
+    format: 'json',
+  })
   const data = await fetchJson(url)
   const value = (data.results || []).map((result) => ({
     id: result.id,
@@ -55,7 +62,8 @@ export async function getForecast(place) {
     latitude: String(place.latitude),
     longitude: String(place.longitude),
     current: 'temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code,is_day',
-    daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset',
+    daily:
+      'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset',
     forecast_days: '6',
     timezone: 'auto',
   })

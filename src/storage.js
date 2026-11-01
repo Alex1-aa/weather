@@ -8,7 +8,11 @@ export const DEFAULT_PREFERENCES = {
 export function normalizePreferences(value) {
   const unit = value?.unit === 'F' ? 'F' : 'C'
   const favorites = Array.isArray(value?.favorites)
-    ? [...new Set(value.favorites.filter((favorite) => typeof favorite === 'string' && favorite.trim()))].slice(0, 8)
+    ? [
+        ...new Set(
+          value.favorites.filter((favorite) => typeof favorite === 'string' && favorite.trim()),
+        ),
+      ].slice(0, 8)
     : []
 
   return { unit, favorites }
