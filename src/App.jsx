@@ -195,11 +195,9 @@ function App() {
       <div className="ambient ambient-top" aria-hidden="true" />
       <div className="ambient ambient-side" aria-hidden="true" />
       <header className="topbar">
-        <a className="brand" href="/" aria-label="WeatherVue home">
+        <a className="brand" href="/" aria-label="Weather home">
           <span className="brand-mark">◒</span>
-          <span className="brand-name">
-            Weather<span>Vue</span>
-          </span>
+          <span className="brand-name">Weather</span>
           <span className="brand-note">FORECAST DESK</span>
         </a>
         <div className="topbar-meta">
@@ -432,7 +430,7 @@ function App() {
         </section>
       </main>
       <footer className="footer">
-        <span>WEATHERVUE / 01</span>
+        <span>WEATHER / 01</span>
         <span>Data from Open-Meteo · No account required · Preferences stay in your browser</span>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-# WeatherVue Forecast — Delivery Outcomes
+# Weather Forecast — Delivery Outcomes
 
 ## 1. Search and location states
 - [x] Users can search for a city or location and submit it to the weather provider.

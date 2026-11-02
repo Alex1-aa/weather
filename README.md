@@ -1,6 +1,6 @@
-# WeatherVue Forecast
+# Weather Forecast
 
-WeatherVue is a responsive React weather dashboard with an atmospheric glass visual language. It uses Open-Meteo for keyless geocoding and forecast data, so the static frontend never contains a provider secret.
+Weather is a responsive React weather dashboard with an atmospheric glass visual language. It uses Open-Meteo for keyless geocoding and forecast data, so the static frontend never contains a provider secret.
 
 ## Run locally
 
